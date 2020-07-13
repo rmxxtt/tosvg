@@ -1,9 +1,10 @@
 from PIL import Image
 
 
+print("-- Можно использовать путь")
 img_name = input("Исходный файл: ")
-print("-- Не обязательный параметр, по дефолту это название исходного файла")
-svg_name = input("Название svg: ").replace(" ", "")
+print("-- Необязательный параметр, по дефолту это название исходного файла")
+svg_name = input("Название svg: ").strip(" ")
 if not svg_name:
     svg_name = img_name.split(".", 1)[0]
 

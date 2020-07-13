@@ -10,7 +10,8 @@ user_height = int(input("Высота среза (y): "))
 print("-- Изображение сохраниться в папке с названием исходного файла")
 print("-- Выполнение...")
 
-save_folder = img_name.split(".", 1)[0]
+save_folder = img_name.rsplit("/")[-1].rsplit("\\")[-1].split(".", 1)[0]
+
 try:
     os.mkdir(save_folder)
 except FileExistsError:

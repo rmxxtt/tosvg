@@ -1,16 +1,11 @@
 from PIL import Image
-import sys
 
 
-if len(sys.argv) == 2:
-    img_name = sys.argv[1]
+img_name = input("Исходный файл: ")
+print("-- Не обязательный параметр, по дефолту это название исходного файла")
+svg_name = input("Название svg: ").replace(" ", "")
+if not svg_name:
     svg_name = img_name.split(".", 1)[0]
-elif len(sys.argv) == 3:
-    img_name = sys.argv[1]
-    svg_name = sys.argv[2].split(".", 1)[0]
-else:
-    sys.exit(1)
-
 
 img = Image.open(img_name)
 width, height = img.size
